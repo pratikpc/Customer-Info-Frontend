@@ -18,6 +18,7 @@ export default function useHttpClient() {
                   mode: 'cors',
                   headers: {
                      ...headers,
+                     'Content-Type': 'application/json',
                      Authorization: `Bearer ${await Token()}`
                   },
                   redirect: 'follow'
