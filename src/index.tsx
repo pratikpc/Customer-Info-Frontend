@@ -1,4 +1,4 @@
-import React from 'react';
+import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -31,9 +31,9 @@ async function FirebaseSetup() {
 
 FirebaseSetup().then(async () => {
    ReactDOM.render(
-      <React.StrictMode>
+      <StrictMode>
          <App />
-      </React.StrictMode>,
+      </StrictMode>,
       document.getElementById('root')
    );
 });

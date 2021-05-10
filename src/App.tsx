@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import { ShowIfAuth, ShowIfNoAuth, SignOut } from './components/AuthCheck';
 import Login from './components/Login';
