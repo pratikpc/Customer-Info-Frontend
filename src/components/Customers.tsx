@@ -1,36 +1,33 @@
-import React, { useState } from 'react';
-import { Token } from './AuthCheck';
-import MaterialTable from 'material-table';
+import { useState } from 'react';
+import MaterialTable from '@material-table/core';
 
-import useFetch from './data/Fetch';
-import useRefresh from './data/Refresh';
-import Open from './data/Open';
-
-import DeleteForever from '@material-ui/icons/DeleteForever';
-import Add from '@material-ui/icons/AddRounded';
-import Refresh from '@material-ui/icons/RefreshRounded';
+import Customer from './data/Customer';
 
 export default function Customers() {
-   const { sendRequest } = useFetch();
-   const [ custInfo, setCustInfo ] = useState([])
-
-   React.useEffect(() => {
-      async function PerformAsync() {
-         console.log(await Token());
-         const results = await sendRequest(`customers`);
-         setCustInfo(results);
+   const [custInfo] = useState([
+      { 'First Name': 'Shah Rukh', 'Last Name': 'Khan', Age: '33' },
+      {
+         'First Name': 'Salman',
+         'Last Name': 'Chunara',
+         Age: '31',
+         x: '4',
+         y: '44',
+         z: '4ae',
+         t: 'eee'
       }
-      PerformAsync();
-   }, []);
+   ]);
+
    return (
-         <MaterialTable
-          columns={[
-            { title: 'First Name', field: 'FirstName' },
-            { title: 'Last Name', field: 'LastName' },
-            { title: 'Address', field: 'Address'}
-          ]}
-          data={custInfo}
-          title="Demo Title"
-        />
+      <MaterialTable
+         columns={[
+            { title: 'First Name', field: 'First Name' },
+            { title: 'Last Name', field: 'Last Name' }
+         ]}
+         data={custInfo}
+         title="Demo Title"
+         detailPanel={rowData => {
+            return <Customer data={rowData} />;
+         }}
+      />
    );
 }
