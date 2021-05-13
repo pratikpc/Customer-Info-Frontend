@@ -1,6 +1,6 @@
 {
   "name": "customer-info-frontend",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "dependencies": {
     "@material-table/core": "^2.3.37",
