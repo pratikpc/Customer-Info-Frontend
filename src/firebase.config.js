@@ -1,11 +1,10 @@
 const firebaseConfig = {
-   apiKey: 'AIzaSyBuAD8yempb8JnNnl5-GyMfZh0ms5bgg3o',
-   authDomain: 'bunkstur.firebaseapp.com',
-   projectId: 'bunkstur',
-   storageBucket: 'bunkstur.appspot.com',
-   messagingSenderId: '757435315429',
-   appId: '1:757435315429:web:1e1a63a02566a1f256d00c',
-   measurementId: 'G-JCQ753ZH2C'
-};
+   apiKey: "AIzaSyB2BkoPHmXcZEZ0ID-pbuKTp1lMPPvoRsU",
+   authDomain: "customer-info-62159.firebaseapp.com",
+   projectId: "customer-info-62159",
+   storageBucket: "customer-info-62159.appspot.com",
+   messagingSenderId: "689610560193",
+   appId: "1:689610560193:web:c16dab87dcaf8d8a873a40"
+ };
 
 export default firebaseConfig;
