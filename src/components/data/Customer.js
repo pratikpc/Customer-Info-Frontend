@@ -1,12 +1,8 @@
-import MaterialTable, { Column } from '@material-table/core';
+import MaterialTable from '@material-table/core';
 import { useState, useEffect } from 'react';
-import useRefresh from './Refresh';
-import useFetch from './Fetch';
 
 export default function Customer(props) {
    const [data, setData] = useState();
-   const { sendRequest } = useFetch();
-   // const { refresh, refreshNow } = useRefresh();
 
    useEffect(() => {
       setData(Convert(props.data));
@@ -57,14 +53,6 @@ export default function Customer(props) {
                      resolve();
                   }, 1000);
                })
-         }}
-         options={{
-            exportButton: true,
-            exportCsv: (columns, data) => {
-               alert(
-                  'You should develop a code to export ' + data.length + ' rows'
-               );
-            }
          }}
       />
    );

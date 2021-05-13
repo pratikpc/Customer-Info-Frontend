@@ -1,12 +1,8 @@
-import MaterialTable, { Column } from '@material-table/core';
+import MaterialTable from '@material-table/core';
 import { useState, useEffect } from 'react';
-import useRefresh from './Refresh';
-import useFetch from './Fetch';
 
 export default function Customers(props) {
-   const [data, setData] = useState();
-   const { sendRequest } = useFetch();
-   // const { refresh, refreshNow } = useRefresh();
+   const [_, setData] = useState();
 
    useEffect(() => {
       setData(Convert(props.data));

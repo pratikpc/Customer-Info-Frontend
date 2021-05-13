@@ -6,7 +6,7 @@ import MaterialTable from '@material-table/core';
 
 export default function AllData() {
    const [custInfo, setCustInfo] = useState();
-   const { refresh, refreshNow } = useRefresh();
+   const { refresh } = useRefresh();
    const { sendRequest } = useFetch();
 
    useEffect(() => {
