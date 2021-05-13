@@ -1,26 +1,20 @@
 import MaterialTable, { Column } from '@material-table/core';
+import { useState, useEffect } from 'react';
+import useRefresh from './Refresh';
+import useFetch from './Fetch';
 
-export type RowData = { key: string; value: string };
-export type Records = { [s: string]: string };
+export default function Customers(props) {
+   const [data, setData] = useState();
+   const { sendRequest } = useFetch();
+   // const { refresh, refreshNow } = useRefresh();
 
-export default function Customer<T>(props: {
-   data: T;
-   searchable?: boolean;
-   keyEditable?:
-      | 'always'
-      | 'onUpdate'
-      | 'onAdd'
-      | 'never'
-      | ((columnDef: Column<RowData>, rowData: RowData) => boolean);
-   valueEditable?:
-      | 'always'
-      | 'onUpdate'
-      | 'onAdd'
-      | 'never'
-      | ((columnDef: Column<RowData>, rowData: RowData) => boolean);
-}) {
+   useEffect(() => {
+      setData(Convert(props.data));
+   }, [props]);
+
    return (
       <MaterialTable
+         {...console.log(props.data)}
          options={{
             search: props.searchable || false,
             showTitle: props.searchable || false,
@@ -45,8 +39,8 @@ export default function Customer<T>(props: {
    );
 }
 
-export function Convert<T>(records: T): RowData[] {
-   const converted: RowData[] = [];
+export function Convert(records) {
+   const converted = [];
    for (const [key, value] of Object.entries(records)) {
       if (typeof value === 'string') converted.push({ key, value });
    }

@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-export function ShowIfAuth(props: { children: any }) {
+export function ShowIfAuth(props) {
    if (User() != null) return <>{props.children}</>;
    return <></>;
 }
@@ -11,7 +11,7 @@ export function User() {
 export async function Token() {
    return await User()?.getIdToken();
 }
-export function ShowIfNoAuth(props: { children: any }) {
+export function ShowIfNoAuth(props) {
    if (User() == null) return <>{props.children}</>;
    return <></>;
 }

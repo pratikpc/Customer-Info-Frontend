@@ -5,7 +5,8 @@ import Login from './components/Login';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Landing from './components/Landing';
+import Userdata from './components/Userdata';
+import AllData from './components/AllData';
 import IconButton from '@material-ui/core/IconButton';
 import LogoutIcon from '@material-ui/icons/PowerSettingsNewRounded';
 
@@ -45,7 +46,8 @@ function App() {
                      </IconButton>
                   </Toolbar>
                </AppBar>
-               <Landing />
+               <Userdata />
+               <AllData />
             </div>
          </ShowIfAuth>
          <ShowIfNoAuth>

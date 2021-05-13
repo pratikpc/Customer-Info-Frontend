@@ -12,8 +12,8 @@ async function FirebaseSetup() {
    // eslint-disable-next-line
    // await CreateAppointments();
    // Wait till Firebase Load Complete before Firing
-   function getCurrentUser(auth: firebase.auth.Auth) {
-      return new Promise<firebase.User | null>((resolve, reject) => {
+   function getCurrentUser(auth) {
+      return new Promise((resolve, reject) => {
          const unsubscribe = auth.onAuthStateChanged(user => {
             unsubscribe();
             resolve(user);

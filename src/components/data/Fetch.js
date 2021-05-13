@@ -3,10 +3,10 @@ import { Token } from '../AuthCheck';
 
 export default function useHttpClient() {
    const [isLoading, setIsLoading] = useState(false);
-   const [error, setError] = useState<string | null>(null);
+   const [error, setError] = useState();
 
    const sendRequest = useCallback(
-      async (url: string, method = 'GET', body = null, headers = {}) => {
+      async (url, method = 'GET', body = null, headers = {}) => {
          setIsLoading(true);
 
          try {
