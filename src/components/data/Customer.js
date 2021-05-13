@@ -56,19 +56,6 @@ export default function Customer(props) {
                      setData([...dataUpdate]);
                      resolve();
                   }, 1000);
-               }),
-            onRowDelete: oldData =>
-               new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                     console.log(oldData);
-                     const dataDelete = [...data];
-                     console.log(dataDelete);
-                     const index = oldData.tableData.id;
-                     dataDelete.splice(index, 1);
-                     setData([...dataDelete]);
-                     console.log(data);
-                     resolve();
-                  }, 1000);
                })
          }}
          options={{

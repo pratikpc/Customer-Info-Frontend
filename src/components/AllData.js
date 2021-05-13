@@ -30,9 +30,6 @@ export default function AllData() {
             return (
                <Customers
                   data={rowData}
-                  searchable={'always'}
-                  keyEditable={'never'}
-                  valueEditable={'never'}
                />
             );
          }}
